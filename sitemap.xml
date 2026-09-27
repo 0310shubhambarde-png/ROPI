@@ -18,4 +18,22 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://ropistudio.com/de/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ropistudio.com/"/>
   </url>
+  <url>
+    <loc>https://ropistudio.com/clinic/</loc>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ropistudio.com/clinic/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ropistudio.com/clinic/de/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ropistudio.com/clinic/"/>
+  </url>
+  <url>
+    <loc>https://ropistudio.com/clinic/de/</loc>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ropistudio.com/clinic/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ropistudio.com/clinic/de/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ropistudio.com/clinic/"/>
+  </url>
 </urlset>
