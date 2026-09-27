@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ropi Studio — Websites that load fast and book clients</title>
+<meta name="description" content="Ropi Studio rebuilds local business websites: fast, mobile-first, with online booking that works at midnight. Flat fee, live in 4 days.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" sizes="64x64" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ropistudio.com">
+<meta property="og:title" content="Ropi Studio — Websites that load fast and book clients">
+<meta property="og:description" content="Fast, mobile-first websites with online booking that works at midnight. Flat fee, live in 4 days.">
+<meta property="og:image" content="https://ropistudio.com/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://ropistudio.com/">
+<link rel="alternate" hreflang="en" href="https://ropistudio.com/">
+<link rel="alternate" hreflang="de" href="https://ropistudio.com/de/">
+<link rel="alternate" hreflang="x-default" href="https://ropistudio.com/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Ropi Studio",
+  "url": "https://ropistudio.com",
+  "logo": "https://ropistudio.com/logo.png",
+  "image": "https://ropistudio.com/og.jpg",
+  "description": "Ropi Studio rebuilds local business websites: fast, mobile-first, with online booking that works at midnight. Flat fee, live in 4 days.",
+  "telephone": "+1-707-532-9983",
+  "priceRange": "$$",
+  "sameAs": [
+    "https://calendly.com/theropistudio/30min"
+  ]
+}
+</script>
+<style>
+  :root {
+    /* Exact Tokens from DESIGN.md */
+    --color-surface-base: #000000;
+    --color-surface-strong: oklab(0 0 0 / 0.3);
+    --color-surface-raised: #fefefe;
+    --color-text-primary: #fffaea;
+    --color-text-tertiary: #ffffff;
+    --color-text-inverse: #111013;
+    --color-border-default: #78908c;
+
+    /* Derived Token Transparencies */
+    --color-border-subtle: rgba(120, 144, 140, 0.25);
+    --color-border-hover: rgba(120, 144, 140, 0.7);
+    --color-text-muted: rgba(255, 250, 234, 0.65);
+    --color-text-faint: rgba(255, 250, 234, 0.4);
+
+    /* Typography Stack & Scale */
+    --font-family-primary: avantt, "avantt Fallback", 'Space Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-size-xs: 12px;
+    --font-size-sm: 13px;
+    --font-size-md: 14px;
+    --font-size-lg: 15px;
+    --font-size-xl: 16px;
+    --font-size-2xl: 18px;
+    --font-size-3xl: 20px;
+    --font-size-4xl: 24px;
+
+    /* Spacing Scale Tokens */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 14px;
+    --space-4: 16px;
+    --space-5: 72px;
+    --space-6: 96px;
+
+    /* Radius Tokens */
+    --radius-xs: 4px;
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 22369600px; /* Pill */
+
+    /* Motion Tokens */
+    --motion-duration-instant: 100ms;
+    --motion-duration-fast: 150ms;
+    --motion-duration-normal: 200ms;
+    --motion-duration-slow: 300ms;
+    --ease-standard: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--color-surface-base);
+  }
+
+  body {
+    background: var(--color-surface-base);
+    color: var(--color-text-primary);
+    font-family: var(--font-family-primary);
+    font-size: var(--font-size-xl);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: var(--color-border-default);
+    color: var(--color-surface-base);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-border-default);
+    outline-offset: 2px;
+  }
+
+  .wrap {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    transition: color var(--motion-duration-fast) var(--ease-standard);
+  }
+
+  /* ============ HEADER & NAVIGATION ============ */
+  header {
+    border-bottom: 1px solid var(--color-border-subtle);
+    background: rgba(0, 0, 0, 0.88);
+    backdrop-filter: blur(12px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 28px;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+  }
+
+  .logo {
+    height: 34px;
+    width: auto;
+    display: block;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    font-size: var(--font-size-md);
+    font-weight: 500;
+    color: var(--color-border-default);
+  }
+
+  .nav-links a:hover {
+    color: var(--color-text-primary);
+  }
+
+  .nav-right {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .nav a.mail-chip {
+    font-size: var(--font-size-sm);
+    color: var(--color-border-default);
+    border: 1px solid var(--color-border-subtle);
+    padding: 7px var(--space-3);
+    border-radius: var(--radius-lg);
+    transition: border-color var(--motion-duration-fast), color var(--motion-duration-fast);
+  }
+
+  .nav a.mail-chip:hover {
+    border-color: var(--color-border-default);
+    color: var(--color-text-primary);
+  }
+
+  /* ============ BUTTONS ============ */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    font-weight: 600;
+    font-size: var(--font-size-lg);
+    line-height: 1;
+    padding: var(--space-3) 28px;
+    border-radius: var(--radius-lg);
+    transition: transform var(--motion-duration-instant), opacity var(--motion-duration-fast), background var(--motion-duration-fast), border-color var(--motion-duration-fast);
+    white-space: nowrap;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+  }
+
+  /* Primary Raised: #fefefe fill with #111013 inverse text */
+  .btn-raised {
+    background: var(--color-surface-raised);
+    color: var(--color-text-inverse);
+  }
+
+  .btn-raised:hover {
+    opacity: 0.92;
+    transform: scale(1.01);
+  }
+
+  .btn-raised:active {
+    transform: scale(0.98) translateY(1px);
+    transition-duration: var(--motion-duration-instant);
+  }
+
+  /* Outline: #78908c border with #fffaea text */
+  .btn-outline {
+    background: transparent;
+    color: var(--color-text-primary);
+    border: 1px solid var(--color-border-default);
+  }
+
+  .btn-outline:hover {
+    background: rgba(120, 144, 140, 0.12);
+    border-color: var(--color-text-tertiary);
+  }
+
+  .btn-outline:active {
+    transform: scale(0.98) translateY(1px);
+  }
+
+  /* ============ HERO SECTION ============ */
+  .hero {
+    padding: var(--space-6) 28px var(--space-5);
+    position: relative;
+  }
+
+  .kicker {
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-border-default);
+    margin-bottom: var(--space-4);
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+  }
+
+  .kicker::before {
+    content: "";
+    width: 24px;
+    height: 1px;
+    background: var(--color-border-default);
+  }
+
+  h1 {
+    font-weight: 700;
+    font-size: clamp(2.8rem, 6.8vw, 5.8rem);
+    line-height: 0.98;
+    letter-spacing: -0.035em;
+    text-transform: uppercase;
+    color: var(--color-text-primary);
+  }
+
+  h1 .dim {
+    color: var(--color-border-default);
+  }
+
+  h1 .highlight {
+    color: var(--color-text-tertiary);
+    text-decoration: underline;
+    text-decoration-color: var(--color-border-default);
+    text-underline-offset: 8px;
+  }
+
+  .hero .sub {
+    margin-top: 32px;
+    max-width: 56ch;
+    color: var(--color-text-muted);
+    font-size: 1.12rem;
+    line-height: 1.65;
+  }
+
+  .hero .sub b {
+    color: var(--color-text-primary);
+    font-weight: 600;
+  }
+
+  .cta-group {
+    margin-top: 40px;
+    display: flex;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  /* ============ MARQUEE TICKER ============ */
+  .marquee {
+    border-top: 1px solid var(--color-border-subtle);
+    border-bottom: 1px solid var(--color-border-subtle);
+    margin-top: var(--space-5);
+    overflow: hidden;
+    padding: var(--space-3) 0;
+    white-space: nowrap;
+    background: var(--color-surface-strong);
+  }
+
+  .marquee .track {
+    display: inline-block;
+    animation: slide 30s linear infinite;
+  }
+
+  .marquee span {
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--color-border-default);
+    margin: 0 24px;
+  }
+
+  .marquee span b {
+    color: var(--color-text-primary);
+    font-weight: 700;
+  }
+
+  @keyframes slide {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* ============ FACTS GRID ============ */
+  .facts {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--color-border-subtle);
+    border: 1px solid var(--color-border-subtle);
+    margin-top: var(--space-5);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+  }
+
+  .fact {
+    background: var(--color-surface-base);
+    padding: 24px 22px;
+  }
+
+  .fact b {
+    font-weight: 700;
+    font-size: 1.7rem;
+    display: block;
+    letter-spacing: -0.02em;
+    font-variant-numeric: tabular-nums;
+    color: var(--color-text-tertiary);
+  }
+
+  .fact b em {
+    color: var(--color-border-default);
+    font-style: normal;
+  }
+
+  .fact span {
+    font-size: var(--font-size-xs);
+    color: var(--color-border-default);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    display: block;
+    margin-top: var(--space-1);
+  }
+
+  /* ============ SECTIONS & HEADINGS ============ */
+  section {
+    padding: var(--space-6) 0;
+  }
+
+  .sec-kicker {
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-border-default);
+    margin-bottom: var(--space-2);
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+  }
+
+  .sec-kicker::before {
+    content: "";
+    width: 28px;
+    height: 1px;
+    background: var(--color-border-default);
+  }
+
+  h2 {
+    font-weight: 700;
+    font-size: clamp(2rem, 3.8vw, 3.1rem);
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    text-transform: uppercase;
+    max-width: 28ch;
+    margin-bottom: 48px;
+    color: var(--color-text-primary);
+  }
+
+  h2 .accent {
+    color: var(--color-text-tertiary);
+    text-decoration: underline;
+    text-decoration-color: var(--color-border-default);
+    text-underline-offset: 6px;
+  }
+
+  /* ============ CARDS GRID ============ */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--color-border-subtle);
+    border: 1px solid var(--color-border-subtle);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+  }
+
+  .card {
+    background: var(--color-surface-base);
+    padding: 38px 34px;
+    transition: background var(--motion-duration-normal), transform var(--motion-duration-normal), border-color var(--motion-duration-normal);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card:hover {
+    background: rgba(120, 144, 140, 0.05);
+    transform: translateY(-3px);
+  }
+
+  .card .num {
+    font-weight: 700;
+    font-size: var(--font-size-xs);
+    letter-spacing: 0.16em;
+    color: var(--color-border-default);
+    display: block;
+    margin-bottom: 36px;
+  }
+
+  .card h3 {
+    font-weight: 700;
+    font-size: var(--font-size-2xl);
+    letter-spacing: -0.02em;
+    margin-bottom: var(--space-2);
+    color: var(--color-text-tertiary);
+  }
+
+  .card p {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-xl);
+    line-height: 1.6;
+    max-width: 44ch;
+  }
+
+  .card .price {
+    margin-top: auto;
+    padding-top: 32px;
+    font-weight: 700;
+    font-size: var(--font-size-2xl);
+    color: var(--color-text-primary);
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-2);
+  }
+
+  .card .price small {
+    font-size: var(--font-size-xs);
+    color: var(--color-border-default);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  /* ============ DEMO BAND ============ */
+  .demoband {
+    background: var(--color-surface-raised);
+    color: var(--color-text-inverse);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    border: 1px solid var(--color-border-default);
+  }
+
+  .demoband .left {
+    padding: 56px 52px;
+  }
+
+  .demoband .kicker {
+    color: var(--color-text-inverse);
+    opacity: 0.7;
+  }
+
+  .demoband .kicker::before {
+    background: var(--color-text-inverse);
+  }
+
+  .demoband h2 {
+    color: var(--color-text-inverse);
+    margin-bottom: var(--space-4);
+    font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+  }
+
+  .demoband p {
+    color: var(--color-text-inverse);
+    opacity: 0.85;
+    margin-bottom: 32px;
+    max-width: 46ch;
+    font-size: var(--font-size-xl);
+  }
+
+  .demoband .btn {
+    background: var(--color-text-inverse);
+    color: var(--color-surface-raised);
+  }
+
+  .demoband .btn:hover {
+    background: var(--color-surface-base);
+    opacity: 0.9;
+  }
+
+  .demoband .right {
+    background: var(--color-surface-base);
+    border-left: 1px solid var(--color-border-subtle);
+    padding: 56px 44px;
+    color: var(--color-border-default);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .demoband .right b {
+    display: block;
+    color: var(--color-text-primary);
+    font-weight: 700;
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--space-4);
+  }
+
+  .demoband .right ol {
+    list-style: none;
+    counter-reset: step;
+  }
+
+  .demoband .right li {
+    counter-increment: step;
+    padding: 12px 0;
+    border-bottom: 1px dashed var(--color-border-subtle);
+    font-size: var(--font-size-md);
+    color: var(--color-text-primary);
+    display: flex;
+    align-items: center;
+  }
+
+  .demoband .right li::before {
+    content: counter(step, decimal-leading-zero) " ";
+    color: var(--color-border-default);
+    font-weight: 700;
+    font-size: var(--font-size-sm);
+    margin-right: var(--space-3);
+  }
+
+  /* ============ PROCESS TIMELINE ============ */
+  .tl {
+    border-left: 1px solid var(--color-border-subtle);
+    padding-left: 0;
+  }
+
+  .tl .row {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 36px;
+    padding: 34px 0 34px 44px;
+    position: relative;
+    border-bottom: 1px solid var(--color-border-subtle);
+  }
+
+  .tl .row::before {
+    content: "";
+    position: absolute;
+    left: -5px;
+    top: 42px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--color-surface-raised);
+    box-shadow: 0 0 0 4px var(--color-surface-base), 0 0 0 6px var(--color-border-default);
+  }
+
+  .tl .day {
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--color-border-default);
+    padding-top: 4px;
+  }
+
+  .tl h3 {
+    font-weight: 700;
+    font-size: var(--font-size-3xl);
+    letter-spacing: -0.02em;
+    margin-bottom: var(--space-2);
+    color: var(--color-text-tertiary);
+  }
+
+  .tl p {
+    color: var(--color-text-muted);
+    max-width: 60ch;
+    font-size: var(--font-size-xl);
+  }
+
+  /* ============ INTAKE & CONTACT ============ */
+  .contact-section {
+    border-top: 1px solid var(--color-border-subtle);
+    padding: var(--space-6) 0;
+  }
+
+  .intake-box {
+    background: var(--color-surface-base);
+    border: 1px solid var(--color-border-default);
+    border-radius: var(--radius-md);
+    padding: 48px;
+    max-width: 780px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .intake-box h2 {
+    margin: 0 auto var(--space-2);
+    max-width: none;
+  }
+
+  .intake-box p {
+    color: var(--color-text-muted);
+    margin-bottom: 32px;
+    font-size: var(--font-size-xl);
+  }
+
+  .intake-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: var(--space-3);
+    text-align: left;
+    margin-bottom: 24px;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+
+  .form-group label {
+    font-size: var(--font-size-sm);
+    color: var(--color-border-default);
+    font-weight: 500;
+  }
+
+  .input-field {
+    background: var(--color-surface-base);
+    border: 1px solid var(--color-border-subtle);
+    border-radius: var(--radius-sm);
+    color: var(--color-text-primary);
+    font-family: var(--font-family-primary);
+    font-size: var(--font-size-md);
+    padding: 12px var(--space-3);
+    width: 100%;
+    height: 44px;
+    transition: border-color var(--motion-duration-fast);
+  }
+
+  .input-field:hover {
+    border-color: var(--color-border-default);
+  }
+
+  .input-field:focus-visible {
+    border-color: var(--color-text-tertiary);
+    outline: 2px solid var(--color-border-default);
+    outline-offset: 1px;
+  }
+
+  .intake-submit {
+    align-self: flex-end;
+    height: 44px;
+  }
+
+  .intake-meta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    color: var(--color-border-default);
+    font-size: var(--font-size-sm);
+    margin-top: 16px;
+    flex-wrap: wrap;
+  }
+
+  .intake-meta a {
+    color: var(--color-text-primary);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  /* ============ FOOTER ============ */
+  footer {
+    border-top: 1px solid var(--color-border-subtle);
+    padding: var(--space-5) 0 var(--space-5);
+    overflow: hidden;
+  }
+
+  .foot .giant {
+    font-weight: 700;
+    font-size: clamp(3.5rem, 14vw, 11rem);
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--color-border-subtle);
+    transition: -webkit-text-stroke var(--motion-duration-normal);
+  }
+
+  .foot .giant:hover {
+    -webkit-text-stroke: 1px var(--color-border-default);
+  }
+
+  .foot .meta {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    margin-top: var(--space-4);
+    color: var(--color-border-default);
+    font-size: var(--font-size-sm);
+  }
+
+  /* ============ MOTION & REVEALS ============ */
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity var(--motion-duration-slow) var(--ease-standard), transform var(--motion-duration-slow) var(--ease-standard);
+    transition-delay: calc(var(--i, 0) * 80ms);
+  }
+
+  .reveal.in {
+    opacity: 1;
+    transform: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    .reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+    .marquee .track {
+      animation: none;
+    }
+    .card:hover {
+      transform: none;
+    }
+  }
+
+  /* ============ RESPONSIVE BREAKPOINTS ============ */
+  @media (max-width: 900px) {
+    h1 {
+      font-size: clamp(2.4rem, 10vw, 3.8rem);
+    }
+    .facts {
+      grid-template-columns: 1fr 1fr;
+    }
+    .cards {
+      grid-template-columns: 1fr;
+    }
+    .demoband {
+      grid-template-columns: 1fr;
+    }
+    .demoband .right {
+      border-left: none;
+      border-top: 1px solid var(--color-border-subtle);
+      padding: 40px 32px;
+    }
+    .demoband .left {
+      padding: 40px 32px;
+    }
+    .tl .row {
+      grid-template-columns: 1fr;
+      gap: var(--space-2);
+    }
+    .intake-form {
+      grid-template-columns: 1fr;
+    }
+    .intake-submit {
+      width: 100%;
+    }
+    section {
+      padding: var(--space-5) 0;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .nav-links {
+      display: none;
+    }
+    .intake-box {
+      padding: 28px 20px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/" aria-label="Ropi Studio home">
+      <img class="logo" src="/logo.png" alt="Ropi Studio" width="760" height="362">
+    </a>
+    <nav class="nav-links" aria-label="Main Navigation">
+      <a href="#services">Services</a>
+      <a href="#demo">Live Demo</a>
+      <a href="#how">How It Works</a>
+      <a href="#intake">Pricing</a>
+    </nav>
+    <div class="nav-right">
+      <a class="mail-chip" href="/de/" aria-label="Switch language to German">DE</a>
+      <a class="mail-chip" href="mailto:shubham@ropistudio.com" aria-label="Email Shubham at Ropi Studio">shubham@ropistudio.com</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="hero wrap">
+    <div class="kicker reveal">Web studio for local businesses · Tampa, serving anywhere</div>
+    <h1 class="reveal" style="--i:1">Your website is <span class="dim">costing you</span> <span class="highlight">customers.</span></h1>
+    <p class="sub reveal" style="--i:2">The average local business site takes <b>8 seconds to load, breaks on phones, and hides the one thing customers want: the book button.</b> We rebuild it in 4 days. Flat fee. You see it working before you pay.</p>
+    <div class="cta-group reveal" style="--i:3">
+      <a href="#intake" class="btn btn-raised">See what we build</a>
+      <a href="https://bayviewdental.surge.sh" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Live demo · go break it</a>
+    </div>
+  </div>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="track">
+      <span>Fast <b>·</b> mobile-first <b>·</b> online booking <b>·</b> AI receptionist <b>·</b> flat fee <b>·</b> live in 4 days <b>·</b></span>
+      <span>Fast <b>·</b> mobile-first <b>·</b> online booking <b>·</b> AI receptionist <b>·</b> flat fee <b>·</b> live in 4 days <b>·</b></span>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="facts reveal">
+      <div class="fact"><b>8s <em>→ 1s</em></b><span>load time, before &amp; after</span></div>
+      <div class="fact"><b>~4 days</b><span>from call to live</span></div>
+      <div class="fact"><b>Flat</b><span>one price, agreed upfront</span></div>
+      <div class="fact"><b>$0</b><span>until you see it working</span></div>
+    </div>
+  </div>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="sec-kicker reveal">Services</div>
+      <h2 class="reveal" style="--i:1">Four fixes. <span class="accent">Each pays for itself in a month.</span></h2>
+      <div class="cards">
+        <article class="card reveal">
+          <span class="num">/01</span>
+          <h3>The rebuild</h3>
+          <p>Loads in under two seconds, looks right on every phone, makes the next step impossible to miss. Google notices. So do customers.</p>
+          <div class="price">$1,500 <small>flat</small></div>
+        </article>
+        <article class="card reveal" style="--i:1">
+          <span class="num">/02</span>
+          <h3>Booking + reminders</h3>
+          <p>Customers pick their slot at 11pm, get an instant confirmation and an automatic reminder. Your front desk stops being a voicemail.</p>
+          <div class="price">$1,000 <small>flat</small></div>
+        </article>
+        <article class="card reveal" style="--i:2">
+          <span class="num">/03</span>
+          <h3>AI receptionist</h3>
+          <p>Answers the twenty questions people always ask, at any hour, in seconds. Books the appointment and never promises what you haven't approved.</p>
+          <div class="price">$1,500 <small>flat</small></div>
+        </article>
+        <article class="card reveal" style="--i:3">
+          <span class="num">/04</span>
+          <h3>Google cleanup</h3>
+          <p>Wrong hours, dead links, no photos, unanswered reviews — we fix what people see before they ever reach your website.</p>
+          <div class="price">$500 <small>flat</small></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="demo">
+    <div class="wrap">
+      <div class="demoband reveal">
+        <div class="left">
+          <div class="kicker">Live demo · go break it</div>
+          <h2>We built a full clinic site. Try booking a slot.</h2>
+          <p>It's real: pick a day, pick a time, get the confirmation screen. Now imagine that on your website instead of "call us between 9 and 5."</p>
+          <a href="https://bayviewdental.surge.sh" class="btn btn-raised" target="_blank" rel="noopener noreferrer">Open the demo →</a>
+        </div>
+        <div class="right">
+          <b>Try it like a customer</b>
+          <ol>
+            <li>Tap "Book Online"</li>
+            <li>Pick any open day, pick a time</li>
+            <li>Enter a name, hit confirm</li>
+            <li>Congratulations — that's a booked patient</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="wrap">
+      <div class="sec-kicker reveal">How it works</div>
+      <h2 class="reveal" style="--i:1">First call to live site. <span class="accent">Three days.</span></h2>
+      <div class="tl">
+        <div class="row reveal">
+          <div class="day">Day 0 · free</div>
+          <div>
+            <h3>The 15-minute call</h3>
+            <p>You talk, we listen. Then we show a working demo and quote one flat number. Don't love it? We part as friends, owing each other nothing.</p>
+          </div>
+        </div>
+        <div class="row reveal" style="--i:1">
+          <div class="day">Day 1–2 · build</div>
+          <div>
+            <h3>We build, you poke at it</h3>
+            <p>Site, booking, assistant — built and tested fast. You get a private link, click everything, request changes. Changes are included, never invoiced.</p>
+          </div>
+        </div>
+        <div class="row reveal" style="--i:2">
+          <div class="day">Day 3 · live</div>
+          <div>
+            <h3>Launch &amp; handover</h3>
+            <p>Domain connected, site live, everything handed over. The second half of payment is due only when it's live and you're happy.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section" id="intake">
+    <div class="wrap">
+      <div class="intake-box reveal">
+        <div class="sec-kicker" style="justify-content:center">Start</div>
+        <h2 style="--i:1">Fifteen minutes. <span class="accent">Zero pressure.</span></h2>
+        <p style="--i:2">Enter your practice website or name. We'll audit your load speed, mobile booking, and send a private preview.</p>
+
+        <!-- 2 Form Inputs satisfying Density Profile -->
+        <form class="intake-form" onsubmit="event.preventDefault(); alert('Thank you! We will inspect your site and send your demo link shortly.');">
+          <div class="form-group">
+            <label for="clinic-url">Clinic Website or Name</label>
+            <input id="clinic-url" class="input-field" type="text" placeholder="e.g. Tampa Dental Care" required>
+          </div>
+          <div class="form-group">
+            <label for="contact-info">Phone or Work Email</label>
+            <input id="contact-info" class="input-field" type="text" placeholder="e.g. doctor@clinic.com" required>
+          </div>
+          <button type="submit" class="btn btn-raised intake-submit">Request Demo →</button>
+        </form>
+
+        <div class="intake-meta">
+          <span>Or reach out directly:</span>
+          <a href="mailto:shubham@ropistudio.com">shubham@ropistudio.com</a>
+          <span>·</span>
+          <span>Flat quote agreed upfront</span>
+          <span>·</span>
+          <span>$0 until you see it working</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div class="giant">Ropi<span style="color:var(--color-border-default);-webkit-text-stroke:0">.</span></div>
+    <div class="meta">
+      <div>© 2026 Ropi Studio · fast, booking-ready websites for local businesses</div>
+      <div><a href="https://ropistudio.com">ropistudio.com</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* Scroll Reveal with Reduced-Motion Support */
+(function(){
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+    return;
+  }
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.16 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+})();
+</script>
+
+</body>
+</html>

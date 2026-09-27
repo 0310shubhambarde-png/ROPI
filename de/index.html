@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ropi Studio — Webseiten, die schnell laden und Kunden buchen</title>
+<meta name="description" content="Ropi Studio baut lokale Unternehmens-Webseiten neu: schnell, mobile-first, mit Online-Buchung, die auch um Mitternacht funktioniert. Pauschalpreis, live in 4 Tagen.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" sizes="64x64" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ropistudio.com/de/">
+<meta property="og:title" content="Ropi Studio — Webseiten, die schnell laden und Kunden buchen">
+<meta property="og:description" content="Schnelle, mobile-first Webseiten mit Online-Buchung, die auch um Mitternacht funktioniert. Pauschalpreis, live in 4 Tagen.">
+<meta property="og:image" content="https://ropistudio.com/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://ropistudio.com/de/">
+<link rel="alternate" hreflang="en" href="https://ropistudio.com/">
+<link rel="alternate" hreflang="de" href="https://ropistudio.com/de/">
+<link rel="alternate" hreflang="x-default" href="https://ropistudio.com/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Ropi Studio",
+  "url": "https://ropistudio.com/de/",
+  "logo": "https://ropistudio.com/logo.png",
+  "image": "https://ropistudio.com/og.jpg",
+  "description": "Schnelle, mobile-first Webseiten mit Online-Buchung für lokale Unternehmen. Pauschalpreis, live in 4 Tagen.",
+  "telephone": "+1-707-532-9983",
+  "priceRange": "$$",
+  "sameAs": [
+    "https://calendly.com/theropistudio/30min"
+  ]
+}
+</script>
+<style>
+  :root {
+    /* Exact Tokens from DESIGN.md */
+    --color-surface-base: #000000;
+    --color-surface-strong: oklab(0 0 0 / 0.3);
+    --color-surface-raised: #fefefe;
+    --color-text-primary: #fffaea;
+    --color-text-tertiary: #ffffff;
+    --color-text-inverse: #111013;
+    --color-border-default: #78908c;
+
+    /* Derived Token Transparencies */
+    --color-border-subtle: rgba(120, 144, 140, 0.25);
+    --color-border-hover: rgba(120, 144, 140, 0.7);
+    --color-text-muted: rgba(255, 250, 234, 0.65);
+    --color-text-faint: rgba(255, 250, 234, 0.4);
+
+    /* Typography Stack & Scale */
+    --font-family-primary: avantt, "avantt Fallback", 'Space Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-size-xs: 12px;
+    --font-size-sm: 13px;
+    --font-size-md: 14px;
+    --font-size-lg: 15px;
+    --font-size-xl: 16px;
+    --font-size-2xl: 18px;
+    --font-size-3xl: 20px;
+    --font-size-4xl: 24px;
+
+    /* Spacing Scale Tokens */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 14px;
+    --space-4: 16px;
+    --space-5: 72px;
+    --space-6: 96px;
+
+    /* Radius Tokens */
+    --radius-xs: 4px;
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 22369600px; /* Pill */
+
+    /* Motion Tokens */
+    --motion-duration-instant: 100ms;
+    --motion-duration-fast: 150ms;
+    --motion-duration-normal: 200ms;
+    --motion-duration-slow: 300ms;
+    --ease-standard: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--color-surface-base);
+  }
+
+  body {
+    background: var(--color-surface-base);
+    color: var(--color-text-primary);
+    font-family: var(--font-family-primary);
+    font-size: var(--font-size-xl);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: var(--color-border-default);
+    color: var(--color-surface-base);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-border-default);
+    outline-offset: 2px;
+  }
+
+  .wrap {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    transition: color var(--motion-duration-fast) var(--ease-standard);
+  }
+
+  /* ============ HEADER & NAVIGATION ============ */
+  header {
+    border-bottom: 1px solid var(--color-border-subtle);
+    background: rgba(0, 0, 0, 0.88);
+    backdrop-filter: blur(12px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 28px;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+  }
+
+  .logo {
+    height: 34px;
+    width: auto;
+    display: block;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    font-size: var(--font-size-md);
+    font-weight: 500;
+    color: var(--color-border-default);
+  }
+
+  .nav-links a:hover {
+    color: var(--color-text-primary);
+  }
+
+  .nav-right {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .nav a.mail-chip {
+    font-size: var(--font-size-sm);
+    color: var(--color-border-default);
+    border: 1px solid var(--color-border-subtle);
+    padding: 7px var(--space-3);
+    border-radius: var(--radius-lg);
+    transition: border-color var(--motion-duration-fast), color var(--motion-duration-fast);
+  }
+
+  .nav a.mail-chip:hover {
+    border-color: var(--color-border-default);
+    color: var(--color-text-primary);
+  }
+
+  /* ============ BUTTONS ============ */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    font-weight: 600;
+    font-size: var(--font-size-lg);
+    line-height: 1;
+    padding: var(--space-3) 28px;
+    border-radius: var(--radius-lg);
+    transition: transform var(--motion-duration-instant), opacity var(--motion-duration-fast), background var(--motion-duration-fast), border-color var(--motion-duration-fast);
+    white-space: nowrap;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+  }
+
+  .btn-raised {
+    background: var(--color-surface-raised);
+    color: var(--color-text-inverse);
+  }
+
+  .btn-raised:hover {
+    opacity: 0.92;
+    transform: scale(1.01);
+  }
+
+  .btn-raised:active {
+    transform: scale(0.98) translateY(1px);
+    transition-duration: var(--motion-duration-instant);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--color-text-primary);
+    border: 1px solid var(--color-border-default);
+  }
+
+  .btn-outline:hover {
+    background: rgba(120, 144, 140, 0.12);
+    border-color: var(--color-text-tertiary);
+  }
+
+  .btn-outline:active {
+    transform: scale(0.98) translateY(1px);
+  }
+
+  /* ============ HERO SECTION ============ */
+  .hero {
+    padding: var(--space-6) 28px var(--space-5);
+    position: relative;
+  }
+
+  .kicker {
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-border-default);
+    margin-bottom: var(--space-4);
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+  }
+
+  .kicker::before {
+    content: "";
+    width: 24px;
+    height: 1px;
+    background: var(--color-border-default);
+  }
+
+  h1 {
+    font-weight: 700;
+    font-size: clamp(2.8rem, 6.8vw, 5.8rem);
+    line-height: 0.98;
+    letter-spacing: -0.035em;
+    text-transform: uppercase;
+    color: var(--color-text-primary);
+  }
+
+  h1 .dim {
+    color: var(--color-border-default);
+  }
+
+  h1 .highlight {
+    color: var(--color-text-tertiary);
+    text-decoration: underline;
+    text-decoration-color: var(--color-border-default);
+    text-underline-offset: 8px;
+  }
+
+  .hero .sub {
+    margin-top: 32px;
+    max-width: 56ch;
+    color: var(--color-text-muted);
+    font-size: 1.12rem;
+    line-height: 1.65;
+  }
+
+  .hero .sub b {
+    color: var(--color-text-primary);
+    font-weight: 600;
+  }
+
+  .cta-group {
+    margin-top: 40px;
+    display: flex;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  /* ============ MARQUEE TICKER ============ */
+  .marquee {
+    border-top: 1px solid var(--color-border-subtle);
+    border-bottom: 1px solid var(--color-border-subtle);
+    margin-top: var(--space-5);
+    overflow: hidden;
+    padding: var(--space-3) 0;
+    white-space: nowrap;
+    background: var(--color-surface-strong);
+  }
+
+  .marquee .track {
+    display: inline-block;
+    animation: slide 30s linear infinite;
+  }
+
+  .marquee span {
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--color-border-default);
+    margin: 0 24px;
+  }
+
+  .marquee span b {
+    color: var(--color-text-primary);
+    font-weight: 700;
+  }
+
+  @keyframes slide {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* ============ FACTS GRID ============ */
+  .facts {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--color-border-subtle);
+    border: 1px solid var(--color-border-subtle);
+    margin-top: var(--space-5);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+  }
+
+  .fact {
+    background: var(--color-surface-base);
+    padding: 24px 22px;
+  }
+
+  .fact b {
+    font-weight: 700;
+    font-size: 1.7rem;
+    display: block;
+    letter-spacing: -0.02em;
+    font-variant-numeric: tabular-nums;
+    color: var(--color-text-tertiary);
+  }
+
+  .fact b em {
+    color: var(--color-border-default);
+    font-style: normal;
+  }
+
+  .fact span {
+    font-size: var(--font-size-xs);
+    color: var(--color-border-default);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    display: block;
+    margin-top: var(--space-1);
+  }
+
+  /* ============ SECTIONS & HEADINGS ============ */
+  section {
+    padding: var(--space-6) 0;
+  }
+
+  .sec-kicker {
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-border-default);
+    margin-bottom: var(--space-2);
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+  }
+
+  .sec-kicker::before {
+    content: "";
+    width: 28px;
+    height: 1px;
+    background: var(--color-border-default);
+  }
+
+  h2 {
+    font-weight: 700;
+    font-size: clamp(2rem, 3.8vw, 3.1rem);
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    text-transform: uppercase;
+    max-width: 28ch;
+    margin-bottom: 48px;
+    color: var(--color-text-primary);
+  }
+
+  h2 .accent {
+    color: var(--color-text-tertiary);
+    text-decoration: underline;
+    text-decoration-color: var(--color-border-default);
+    text-underline-offset: 6px;
+  }
+
+  .intro-note {
+    color: var(--color-border-default);
+    font-size: var(--font-size-md);
+    margin-top: -32px;
+    margin-bottom: 40px;
+  }
+
+  /* ============ CARDS GRID ============ */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--color-border-subtle);
+    border: 1px solid var(--color-border-subtle);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+  }
+
+  .card {
+    background: var(--color-surface-base);
+    padding: 38px 34px;
+    transition: background var(--motion-duration-normal), transform var(--motion-duration-normal);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card:hover {
+    background: rgba(120, 144, 140, 0.05);
+    transform: translateY(-3px);
+  }
+
+  .card .num {
+    font-weight: 700;
+    font-size: var(--font-size-xs);
+    letter-spacing: 0.16em;
+    color: var(--color-border-default);
+    display: block;
+    margin-bottom: 36px;
+  }
+
+  .card h3 {
+    font-weight: 700;
+    font-size: var(--font-size-2xl);
+    letter-spacing: -0.02em;
+    margin-bottom: var(--space-2);
+    color: var(--color-text-tertiary);
+  }
+
+  .card p {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-xl);
+    line-height: 1.6;
+    max-width: 44ch;
+  }
+
+  .card .price {
+    margin-top: auto;
+    padding-top: 32px;
+    font-weight: 700;
+    font-size: var(--font-size-2xl);
+    color: var(--color-text-primary);
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-2);
+  }
+
+  .card .price small {
+    font-size: var(--font-size-xs);
+    color: var(--color-border-default);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  /* ============ DEMO BAND ============ */
+  .demoband {
+    background: var(--color-surface-raised);
+    color: var(--color-text-inverse);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    border: 1px solid var(--color-border-default);
+  }
+
+  .demoband .left {
+    padding: 56px 52px;
+  }
+
+  .demoband .kicker {
+    color: var(--color-text-inverse);
+    opacity: 0.7;
+  }
+
+  .demoband .kicker::before {
+    background: var(--color-text-inverse);
+  }
+
+  .demoband h2 {
+    color: var(--color-text-inverse);
+    margin-bottom: var(--space-4);
+    font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+  }
+
+  .demoband p {
+    color: var(--color-text-inverse);
+    opacity: 0.85;
+    margin-bottom: 32px;
+    max-width: 46ch;
+    font-size: var(--font-size-xl);
+  }
+
+  .demoband .btn {
+    background: var(--color-text-inverse);
+    color: var(--color-surface-raised);
+  }
+
+  .demoband .btn:hover {
+    background: var(--color-surface-base);
+    opacity: 0.9;
+  }
+
+  .demoband .right {
+    background: var(--color-surface-base);
+    border-left: 1px solid var(--color-border-subtle);
+    padding: 56px 44px;
+    color: var(--color-border-default);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .demoband .right b {
+    display: block;
+    color: var(--color-text-primary);
+    font-weight: 700;
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--space-4);
+  }
+
+  .demoband .right ol {
+    list-style: none;
+    counter-reset: step;
+  }
+
+  .demoband .right li {
+    counter-increment: step;
+    padding: 12px 0;
+    border-bottom: 1px dashed var(--color-border-subtle);
+    font-size: var(--font-size-md);
+    color: var(--color-text-primary);
+    display: flex;
+    align-items: center;
+  }
+
+  .demoband .right li::before {
+    content: counter(step, decimal-leading-zero) " ";
+    color: var(--color-border-default);
+    font-weight: 700;
+    font-size: var(--font-size-sm);
+    margin-right: var(--space-3);
+  }
+
+  /* ============ PROCESS TIMELINE ============ */
+  .tl {
+    border-left: 1px solid var(--color-border-subtle);
+    padding-left: 0;
+  }
+
+  .tl .row {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 36px;
+    padding: 34px 0 34px 44px;
+    position: relative;
+    border-bottom: 1px solid var(--color-border-subtle);
+  }
+
+  .tl .row::before {
+    content: "";
+    position: absolute;
+    left: -5px;
+    top: 42px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--color-surface-raised);
+    box-shadow: 0 0 0 4px var(--color-surface-base), 0 0 0 6px var(--color-border-default);
+  }
+
+  .tl .day {
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--color-border-default);
+    padding-top: 4px;
+  }
+
+  .tl h3 {
+    font-weight: 700;
+    font-size: var(--font-size-3xl);
+    letter-spacing: -0.02em;
+    margin-bottom: var(--space-2);
+    color: var(--color-text-tertiary);
+  }
+
+  .tl p {
+    color: var(--color-text-muted);
+    max-width: 60ch;
+    font-size: var(--font-size-xl);
+  }
+
+  /* ============ INTAKE & CONTACT ============ */
+  .contact-section {
+    border-top: 1px solid var(--color-border-subtle);
+    padding: var(--space-6) 0;
+  }
+
+  .intake-box {
+    background: var(--color-surface-base);
+    border: 1px solid var(--color-border-default);
+    border-radius: var(--radius-md);
+    padding: 48px;
+    max-width: 780px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .intake-box h2 {
+    margin: 0 auto var(--space-2);
+    max-width: none;
+  }
+
+  .intake-box p {
+    color: var(--color-text-muted);
+    margin-bottom: 32px;
+    font-size: var(--font-size-xl);
+  }
+
+  .intake-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: var(--space-3);
+    text-align: left;
+    margin-bottom: 24px;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+
+  .form-group label {
+    font-size: var(--font-size-sm);
+    color: var(--color-border-default);
+    font-weight: 500;
+  }
+
+  .input-field {
+    background: var(--color-surface-base);
+    border: 1px solid var(--color-border-subtle);
+    border-radius: var(--radius-sm);
+    color: var(--color-text-primary);
+    font-family: var(--font-family-primary);
+    font-size: var(--font-size-md);
+    padding: 12px var(--space-3);
+    width: 100%;
+    height: 44px;
+    transition: border-color var(--motion-duration-fast);
+  }
+
+  .input-field:hover {
+    border-color: var(--color-border-default);
+  }
+
+  .input-field:focus-visible {
+    border-color: var(--color-text-tertiary);
+    outline: 2px solid var(--color-border-default);
+    outline-offset: 1px;
+  }
+
+  .intake-submit {
+    align-self: flex-end;
+    height: 44px;
+  }
+
+  .intake-meta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    color: var(--color-border-default);
+    font-size: var(--font-size-sm);
+    margin-top: 16px;
+    flex-wrap: wrap;
+  }
+
+  .intake-meta a {
+    color: var(--color-text-primary);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  /* ============ FOOTER ============ */
+  footer {
+    border-top: 1px solid var(--color-border-subtle);
+    padding: var(--space-5) 0 var(--space-5);
+    overflow: hidden;
+  }
+
+  .foot .giant {
+    font-weight: 700;
+    font-size: clamp(3.5rem, 14vw, 11rem);
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--color-border-subtle);
+    transition: -webkit-text-stroke var(--motion-duration-normal);
+  }
+
+  .foot .giant:hover {
+    -webkit-text-stroke: 1px var(--color-border-default);
+  }
+
+  .foot .meta {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    margin-top: var(--space-4);
+    color: var(--color-border-default);
+    font-size: var(--font-size-sm);
+  }
+
+  /* ============ MOTION & REVEALS ============ */
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity var(--motion-duration-slow) var(--ease-standard), transform var(--motion-duration-slow) var(--ease-standard);
+    transition-delay: calc(var(--i, 0) * 80ms);
+  }
+
+  .reveal.in {
+    opacity: 1;
+    transform: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    .reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+    .marquee .track {
+      animation: none;
+    }
+    .card:hover {
+      transform: none;
+    }
+  }
+
+  /* ============ RESPONSIVE BREAKPOINTS ============ */
+  @media (max-width: 900px) {
+    h1 {
+      font-size: clamp(2.4rem, 10vw, 3.8rem);
+    }
+    .facts {
+      grid-template-columns: 1fr 1fr;
+    }
+    .cards {
+      grid-template-columns: 1fr;
+    }
+    .demoband {
+      grid-template-columns: 1fr;
+    }
+    .demoband .right {
+      border-left: none;
+      border-top: 1px solid var(--color-border-subtle);
+      padding: 40px 32px;
+    }
+    .demoband .left {
+      padding: 40px 32px;
+    }
+    .tl .row {
+      grid-template-columns: 1fr;
+      gap: var(--space-2);
+    }
+    .intake-form {
+      grid-template-columns: 1fr;
+    }
+    .intake-submit {
+      width: 100%;
+    }
+    section {
+      padding: var(--space-5) 0;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .nav-links {
+      display: none;
+    }
+    .intake-box {
+      padding: 28px 20px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/de/" aria-label="Ropi Studio Home">
+      <img class="logo" src="/logo.png" alt="Ropi Studio" width="760" height="362">
+    </a>
+    <nav class="nav-links" aria-label="Hauptnavigation">
+      <a href="#services">Leistungen</a>
+      <a href="#demo">Live-Demo</a>
+      <a href="#how">Ablauf</a>
+      <a href="#intake">Preise</a>
+    </nav>
+    <div class="nav-right">
+      <a class="mail-chip" href="/" aria-label="Sprache auf Englisch wechseln">EN</a>
+      <a class="mail-chip" href="mailto:shubham@ropistudio.com" aria-label="E-Mail an Shubham">shubham@ropistudio.com</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="hero wrap">
+    <div class="kicker reveal">Web-Studio für lokale Unternehmen · aus Hannover, für überall</div>
+    <h1 class="reveal" style="--i:1">Ihre Webseite <span class="dim">kostet Sie</span> <span class="highlight">Kunden.</span></h1>
+    <p class="sub reveal" style="--i:2">Die durchschnittliche Website lokaler Unternehmen braucht <b>8 Sekunden zum Laden, bricht auf Handys und versteckt das Einzige, was Kunden wollen: den Buchungs-Button.</b> Wir bauen sie in 4 Tagen neu. Pauschalpreis. Sie sehen sie arbeiten, bevor Sie zahlen.</p>
+    <div class="cta-group reveal" style="--i:3">
+      <a href="#intake" class="btn btn-raised">Unsere Leistungen</a>
+      <a href="https://bayviewdental.surge.sh/de/" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Live-Demo: klicken Sie alles durch</a>
+    </div>
+  </div>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="track">
+      <span>Schnell <b>·</b> Mobile-first <b>·</b> Online-Buchung <b>·</b> KI-Rezeptionistin <b>·</b> Pauschalpreis <b>·</b> Live in 4 Tagen <b>·</b></span>
+      <span>Schnell <b>·</b> Mobile-first <b>·</b> Online-Buchung <b>·</b> KI-Rezeptionistin <b>·</b> Pauschalpreis <b>·</b> Live in 4 Tagen <b>·</b></span>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="facts reveal">
+      <div class="fact"><b>8s <em>→ 1s</em></b><span>Ladezeit, vorher &amp; nachher</span></div>
+      <div class="fact"><b>~4 Tage</b><span>vom Anruf bis live</span></div>
+      <div class="fact"><b>Pauschal</b><span>ein Preis, vorher vereinbart</span></div>
+      <div class="fact"><b>0&nbsp;€</b><span>bis Sie sie arbeiten sehen</span></div>
+    </div>
+  </div>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="sec-kicker reveal">Leistungen</div>
+      <h2 class="reveal" style="--i:1">Drei Fixes. <span class="accent">Jeder zahlt sich in einem Monat zurück.</span></h2>
+      <p class="intro-note reveal">Einführungspreise für die Region Hannover — <b>begrenzte Plätze pro Monat.</b></p>
+      <div class="cards">
+        <article class="card reveal">
+          <span class="num">/01</span>
+          <h3>Der Neubau</h3>
+          <p>Lädt in unter zwei Sekunden, sieht auf jedem Handy richtig aus und macht den nächsten Schritt unmöglich zu übersehen. Google bemerkt es. Kunden auch.</p>
+          <div class="price">200&nbsp;€ <small>pauschal · Einführungspreis</small></div>
+        </article>
+        <article class="card reveal" style="--i:1">
+          <span class="num">/02</span>
+          <h3>Buchung + Erinnerungen</h3>
+          <p>Kunden wählen ihren Slot um 23&nbsp;Uhr, bekommen eine sofortige Bestätigung und eine automatische Erinnerung. Ihr Empfang ist keine Mailbox mehr.</p>
+          <div class="price">100&nbsp;€ <small>pauschal · Einführungspreis</small></div>
+        </article>
+        <article class="card reveal" style="--i:2">
+          <span class="num">/03</span>
+          <h3>KI-Rezeptionistin</h3>
+          <p>Beantwortet die zwanzig Fragen, die alle stellen — zu jeder Stunde, in Sekunden. Bucht den Termin und verspricht nie, was Sie nicht freigegeben haben.</p>
+          <div class="price">150&nbsp;€ <small>pauschal · Einführungspreis</small></div>
+        </article>
+        <article class="card reveal" style="--i:3">
+          <span class="num">/04</span>
+          <h3>Google aufräumen</h3>
+          <p>Falsche Öffnungszeiten, tote Links, keine Fotos, unbeantwortete Bewertungen — wir reparieren, was Leute sehen, bevor sie überhaupt Ihre Webseite erreichen.</p>
+          <div class="price">50&nbsp;€ <small>pauschal · Einführungspreis</small></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="demo">
+    <div class="wrap">
+      <div class="demoband reveal">
+        <div class="left">
+          <div class="kicker">Live-Demo — klicken Sie alles durch</div>
+          <h2>Wir haben eine komplette Zahnarzt-Website gebaut. Probieren Sie die Buchung aus.</h2>
+          <p>Sie ist echt: Tag wählen, Zeit wählen, Bestätigung sehen. Stellen Sie sich das auf Ihrer Website vor — statt „Rufen Sie uns zwischen 9 und 17&nbsp;Uhr an.“</p>
+          <a href="https://bayviewdental.surge.sh/de/" class="btn btn-raised" target="_blank" rel="noopener noreferrer">Demo öffnen →</a>
+        </div>
+        <div class="right">
+          <b>Probieren Sie es wie ein Kunde</b>
+          <ol>
+            <li>Auf „Online buchen“ tippen</li>
+            <li>Freien Tag wählen, Zeit wählen</li>
+            <li>Namen eingeben, bestätigen</li>
+            <li>Glückwunsch — das ist ein gebuchter Patient</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="wrap">
+      <div class="sec-kicker reveal">So läuft es</div>
+      <h2 class="reveal" style="--i:1">Erster Anruf bis live Website. <span class="accent">Drei bis vier Tage.</span></h2>
+      <div class="tl">
+        <div class="row reveal">
+          <div class="day">Tag 0 · kostenlos</div>
+          <div>
+            <h3>Das 15-Minuten-Gespräch</h3>
+            <p>Sie reden, wir hören zu. Dann zeigen wir eine funktionierende Demo und nennen eine pauschale Zahl. Nicht überzeugt? Wir gehen als Freunde auseinander — nichts geschuldet, beiderseits.</p>
+          </div>
+        </div>
+        <div class="row reveal" style="--i:1">
+          <div class="day">Tag 1–2 · Bau</div>
+          <div>
+            <h3>Wir bauen, Sie klicken herum</h3>
+            <p>Website, Buchung, Assistentin — schnell gebaut und getestet. Sie bekommen einen privaten Link, klicken alles durch und wünschen Änderungen an. Änderungen sind inklusive, nie separat in Rechnung gestellt.</p>
+          </div>
+        </div>
+        <div class="row reveal" style="--i:2">
+          <div class="day">Tag 3–4 · live</div>
+          <div>
+            <h3>Start &amp; Übergabe</h3>
+            <p>Domain verbunden, Website live, alles übergeben. Die zweite Zahlungshälfte wird erst fällig, wenn es live ist und Sie zufrieden sind.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section" id="intake">
+    <div class="wrap">
+      <div class="intake-box reveal">
+        <div class="sec-kicker" style="justify-content:center">Loslegen</div>
+        <h2 style="--i:1">Fünfzehn Minuten. <span class="accent">Kein Druck.</span></h2>
+        <p style="--i:2">Geben Sie Ihre Praxis-Webseite oder Ihren Namen ein. Wir analysieren Ladezeiten, Mobil-Buchung und senden Ihnen eine private Vorschau.</p>
+
+        <!-- 2 Form Inputs -->
+        <form class="intake-form" onsubmit="event.preventDefault(); alert('Vielen Dank! Wir prüfen Ihre Webseite und senden Ihnen in Kürze Ihren Demo-Link.');">
+          <div class="form-group">
+            <label for="clinic-url-de">Praxis-Webseite oder Name</label>
+            <input id="clinic-url-de" class="input-field" type="text" placeholder="z.B. Zahnarztpraxis Müller" required>
+          </div>
+          <div class="form-group">
+            <label for="contact-info-de">Telefon oder geschäftliche E-Mail</label>
+            <input id="contact-info-de" class="input-field" type="text" placeholder="z.B. praxis@mueller.de" required>
+          </div>
+          <button type="submit" class="btn btn-raised intake-submit">Demo anfordern →</button>
+        </form>
+
+        <div class="intake-meta">
+          <span>Oder direkt kontaktieren:</span>
+          <a href="mailto:shubham@ropistudio.com">shubham@ropistudio.com</a>
+          <span>·</span>
+          <span>Pauschalpreis vorab vereinbart</span>
+          <span>·</span>
+          <span>0&nbsp;€ bis Sie sie arbeiten sehen</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div class="giant">Ropi<span style="color:var(--color-border-default);-webkit-text-stroke:0">.</span></div>
+    <div class="meta">
+      <div>© 2026 Ropi Studio — schnelle, buchungsbereite Webseiten für lokale Unternehmen</div>
+      <div><a href="https://ropistudio.com/de/">ropistudio.com/de/</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* Scroll Reveal with Reduced-Motion Support */
+(function(){
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+    return;
+  }
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.16 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+})();
+</script>
+
+</body>
+</html>
