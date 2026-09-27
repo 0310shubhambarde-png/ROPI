@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ropi Studio — Websites that load fast and book clients</title>
+<title>Ropi Studio: Websites that load fast and book clients</title>
 <meta name="description" content="Ropi Studio rebuilds local business websites: fast, mobile-first, with online booking that works at midnight. Flat fee, live in 4 days.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,7 +12,7 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ropistudio.com">
-<meta property="og:title" content="Ropi Studio — Websites that load fast and book clients">
+<meta property="og:title" content="Ropi Studio: Websites that load fast and book clients">
 <meta property="og:description" content="Fast, mobile-first websites with online booking that works at midnight. Flat fee, live in 4 days.">
 <meta property="og:image" content="https://ropistudio.com/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
@@ -38,20 +38,21 @@
 </script>
 <style>
   :root {
-    /* Exact Tokens from DESIGN.md */
-    --color-surface-base: #000000;
-    --color-surface-strong: oklab(0 0 0 / 0.3);
-    --color-surface-raised: #fefefe;
-    --color-text-primary: #fffaea;
+    /* Refined Clean Dark Studio Palette */
+    --color-surface-base: #0a0b0e;
+    --color-surface-strong: rgba(255, 255, 255, 0.03);
+    --color-surface-raised: #ffffff;
+    --color-text-primary: #f8fafc;
     --color-text-tertiary: #ffffff;
-    --color-text-inverse: #111013;
-    --color-border-default: #78908c;
+    --color-text-inverse: #0a0b0e;
+    --color-border-default: #334155;
 
-    /* Derived Token Transparencies */
-    --color-border-subtle: rgba(120, 144, 140, 0.25);
-    --color-border-hover: rgba(120, 144, 140, 0.7);
-    --color-text-muted: rgba(255, 250, 234, 0.65);
-    --color-text-faint: rgba(255, 250, 234, 0.4);
+    /* Derived Token Transparencies & Accents */
+    --color-border-subtle: rgba(255, 255, 255, 0.08);
+    --color-border-hover: rgba(45, 212, 191, 0.5);
+    --color-text-muted: #94a3b8;
+    --color-text-faint: #64748b;
+    --color-accent: #2dd4bf;
 
     /* Typography Stack & Scale */
     --font-family-primary: avantt, "avantt Fallback", 'Space Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -225,7 +226,7 @@
     transition-duration: var(--motion-duration-instant);
   }
 
-  /* Outline: #78908c border with #fffaea text */
+  /* Outline button */
   .btn-outline {
     background: transparent;
     color: var(--color-text-primary);
@@ -233,8 +234,8 @@
   }
 
   .btn-outline:hover {
-    background: rgba(120, 144, 140, 0.12);
-    border-color: var(--color-text-tertiary);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--color-accent);
   }
 
   .btn-outline:active {
@@ -307,39 +308,45 @@
     align-items: center;
   }
 
-  /* ============ MARQUEE TICKER ============ */
-  .marquee {
+  /* ============ FEATURE STRIP (STATIONARY) ============ */
+  .feature-strip {
     border-top: 1px solid var(--color-border-subtle);
     border-bottom: 1px solid var(--color-border-subtle);
     margin-top: var(--space-5);
-    overflow: hidden;
-    padding: var(--space-3) 0;
-    white-space: nowrap;
+    padding: 16px 0;
     background: var(--color-surface-strong);
   }
 
-  .marquee .track {
-    display: inline-block;
-    animation: slide 30s linear infinite;
+  .feature-strip-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    text-align: center;
   }
 
-  .marquee span {
+  .feature-item {
     font-size: var(--font-size-sm);
     font-weight: 600;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--color-border-default);
-    margin: 0 24px;
+    color: var(--color-text-muted);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
   }
 
-  .marquee span b {
+  .feature-item b {
     color: var(--color-text-primary);
     font-weight: 700;
   }
 
-  @keyframes slide {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
+  .feature-dot {
+    color: var(--color-accent);
+    font-weight: 700;
+    font-size: 14px;
+    opacity: 0.8;
   }
 
   /* ============ FACTS GRID ============ */
@@ -445,7 +452,8 @@
   }
 
   .card:hover {
-    background: rgba(120, 144, 140, 0.05);
+    background: rgba(255, 255, 255, 0.03);
+    border-color: var(--color-border-hover);
     transform: translateY(-3px);
   }
 
@@ -725,33 +733,126 @@
   /* ============ FOOTER ============ */
   footer {
     border-top: 1px solid var(--color-border-subtle);
-    padding: var(--space-5) 0 var(--space-5);
-    overflow: hidden;
+    padding: var(--space-6) 0 var(--space-5);
+    background: rgba(0, 0, 0, 0.35);
   }
 
-  .foot .giant {
-    font-weight: 700;
-    font-size: clamp(3.5rem, 14vw, 11rem);
-    line-height: 0.9;
-    letter-spacing: -0.04em;
+  .foot-main {
+    display: grid;
+    grid-template-columns: 1.3fr 2fr;
+    gap: 48px;
+    padding-bottom: var(--space-5);
+  }
+
+  .foot-brand-col {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .foot-desc {
+    font-size: var(--font-size-md);
+    color: var(--color-text-muted);
+    max-width: 36ch;
+    line-height: 1.6;
+  }
+
+  .foot-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: var(--font-size-xs);
+    color: var(--color-text-primary);
+    background: rgba(45, 212, 191, 0.08);
+    border: 1px solid rgba(45, 212, 191, 0.25);
+    padding: 6px 14px;
+    border-radius: var(--radius-lg);
+    width: fit-content;
+    margin-top: 4px;
+  }
+
+  .status-indicator {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #2dd4bf;
+    box-shadow: 0 0 8px #2dd4bf;
+  }
+
+  .foot-links-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+
+  .foot-col h4 {
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: transparent;
-    -webkit-text-stroke: 1px var(--color-border-subtle);
-    transition: -webkit-text-stroke var(--motion-duration-normal);
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-3);
   }
 
-  .foot .giant:hover {
-    -webkit-text-stroke: 1px var(--color-border-default);
+  .foot-col ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
 
-  .foot .meta {
+  .foot-col a, .foot-col .foot-muted-text {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    transition: color var(--motion-duration-fast);
+  }
+
+  .foot-col a:hover {
+    color: var(--color-text-primary);
+  }
+
+  .foot-bar {
+    border-top: 1px solid var(--color-border-subtle);
+    padding-top: var(--space-4);
     display: flex;
     justify-content: space-between;
+    align-items: center;
     flex-wrap: wrap;
     gap: var(--space-3);
-    margin-top: var(--space-4);
-    color: var(--color-border-default);
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+  }
+
+  .foot-sublinks {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .foot-sublinks a {
+    color: var(--color-text-primary);
+  }
+
+  @media (max-width: 860px) {
+    .foot-main {
+      grid-template-columns: 1fr;
+      gap: 36px;
+    }
+    .foot-links-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .foot-links-grid {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    .foot-bar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
   }
 
   /* ============ MOTION & REVEALS ============ */
@@ -775,9 +876,6 @@
       opacity: 1;
       transform: none;
       transition: none;
-    }
-    .marquee .track {
-      animation: none;
     }
     .card:hover {
       transform: none;
@@ -862,10 +960,19 @@
     </div>
   </div>
 
-  <div class="marquee" aria-hidden="true">
-    <div class="track">
-      <span>Fast <b>·</b> mobile-first <b>·</b> online booking <b>·</b> AI receptionist <b>·</b> flat fee <b>·</b> live in 4 days <b>·</b></span>
-      <span>Fast <b>·</b> mobile-first <b>·</b> online booking <b>·</b> AI receptionist <b>·</b> flat fee <b>·</b> live in 4 days <b>·</b></span>
+  <div class="feature-strip">
+    <div class="wrap feature-strip-inner">
+      <span class="feature-item">Fast <b>·</b> Mobile-First</span>
+      <span class="feature-dot">·</span>
+      <span class="feature-item">Online Booking</span>
+      <span class="feature-dot">·</span>
+      <span class="feature-item">AI Receptionist</span>
+      <span class="feature-dot">·</span>
+      <span class="feature-item">Flat Fee</span>
+      <span class="feature-dot">·</span>
+      <span class="feature-item">Live in 4 Days</span>
+      <span class="feature-dot">·</span>
+      <span class="feature-item">$0 Upfront Risk</span>
     </div>
   </div>
 
@@ -904,7 +1011,7 @@
         <article class="card reveal" style="--i:3">
           <span class="num">/04</span>
           <h3>Google cleanup</h3>
-          <p>Wrong hours, dead links, no photos, unanswered reviews — we fix what people see before they ever reach your website.</p>
+          <p>Wrong hours, dead links, missing photos, and unanswered reviews. We fix what people see before they ever reach your website.</p>
           <div class="price">$500 <small>flat</small></div>
         </article>
       </div>
@@ -926,7 +1033,7 @@
             <li>Tap "Book Online"</li>
             <li>Pick any open day, pick a time</li>
             <li>Enter a name, hit confirm</li>
-            <li>Congratulations — that's a booked patient</li>
+            <li>That is it. A new patient is booked.</li>
           </ol>
         </div>
       </div>
@@ -946,10 +1053,10 @@
           </div>
         </div>
         <div class="row reveal" style="--i:1">
-          <div class="day">Day 1–2 · build</div>
+          <div class="day">Days 1 and 2 · Build</div>
           <div>
             <h3>We build, you poke at it</h3>
-            <p>Site, booking, assistant — built and tested fast. You get a private link, click everything, request changes. Changes are included, never invoiced.</p>
+            <p>Site, booking system, and AI receptionist built and tested fast. You get a private link, click everything, and request changes. Revisions are included, never invoiced.</p>
           </div>
         </div>
         <div class="row reveal" style="--i:2">
@@ -997,11 +1104,56 @@
 </main>
 
 <footer>
-  <div class="wrap foot">
-    <div class="giant">Ropi<span style="color:var(--color-border-default);-webkit-text-stroke:0">.</span></div>
-    <div class="meta">
-      <div>© 2026 Ropi Studio · fast, booking-ready websites for local businesses</div>
-      <div><a href="https://ropistudio.com">ropistudio.com</a></div>
+  <div class="wrap foot-main">
+    <div class="foot-brand-col">
+      <a class="brand" href="/" aria-label="Ropi Studio home">
+        <img class="logo" src="/logo.png" alt="Ropi Studio" width="760" height="362">
+      </a>
+      <p class="foot-desc">Fast, mobile-first websites with online booking that works around the clock. Built in 4 days with one flat fee.</p>
+      <div class="foot-status">
+        <span class="status-indicator"></span> Available for new client projects this month
+      </div>
+    </div>
+
+    <div class="foot-links-grid">
+      <div class="foot-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Full Website Rebuild</a></li>
+          <li><a href="#services">Online Booking System</a></li>
+          <li><a href="#services">AI Front Desk Receptionist</a></li>
+          <li><a href="#services">Google Profile Optimization</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="clinic/" target="_blank" rel="noopener noreferrer">Interactive Demo Clinic</a></li>
+          <li><a href="#how">How It Works (4-Day Timeline)</a></li>
+          <li><a href="#intake">Pricing and Free Audit</a></li>
+          <li><a href="/de/">Deutsche Version (DE)</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <h4>Direct Contact</h4>
+        <ul>
+          <li><a href="mailto:shubham@ropistudio.com">shubham@ropistudio.com</a></li>
+          <li><a href="tel:+17075329983">+1 (707) 532-9983</a></li>
+          <li><a href="https://calendly.com/theropistudio/30min" target="_blank" rel="noopener noreferrer">Schedule 15-Minute Call</a></li>
+          <li class="foot-muted-text">Tampa, Florida · Serving Worldwide</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap foot-bar">
+    <div class="foot-copy">© 2026 Ropi Studio. All rights reserved. Zero risk upfront.</div>
+    <div class="foot-sublinks">
+      <span>Built for local business growth</span>
+      <span class="foot-bar-dot">·</span>
+      <a href="https://ropistudio.com">ropistudio.com</a>
     </div>
   </div>
 </footer>
