@@ -907,7 +907,7 @@ else if(!p&&(navigator.language||'').toLowerCase().indexOf('de')===0){location.r
       <div style="margin-top:24px">
         <div class="info-line"><span class="dot"></span><div><b>412 Bayshore Blvd, Suite 210</b><br>Tampa, FL 33606</div></div>
         <div class="info-line"><span class="dot"></span><div><b>(813) 555-0142</b><br>Reception answers within 3 rings during open hours</div></div>
-        <div class="info-line"><span class="dot"></span><div><b>Mon–Fri 8:00–19:00 · Sat 9:00–14:00</b><br>Free patient parking behind the building</div></div>
+        <div class="info-line"><span class="dot"></span><div><b>Mon to Fri 8:00 to 19:00 · Sat 9:00 to 14:00</b><br>Free patient parking behind the building</div></div>
       </div>
     </div>
     <div class="book-card reveal" style="--i:1">
@@ -1270,7 +1270,7 @@ let quickBook;
         desc: 'Facial swelling or acute trauma indicates an urgent infection or risk. Immediate intervention is required.'
       },
       reply: 'Please do not wait. Facial swelling or severe trauma can become serious quickly.\n\n• For swelling: Apply an ice pack externally, keep your head elevated, and DO NOT place aspirin on your gums.\n• If a tooth is knocked out: Gently place it in a glass of cold milk or saliva and come in immediately (there is a critical 60-minute window to re-implant).\n\nDr. Marcus Davis reserves same-day emergency windows every single morning and afternoon.',
-      spoken: 'Please do not wait if you have facial swelling or severe trauma. Apply an ice pack externally, and do not place aspirin on your gums. Dr. Davis has emergency windows reserved today—would you like me to book a relief visit for you right now?',
+      spoken: 'Please do not wait if you have facial swelling or severe trauma. Apply an ice pack externally, and do not place aspirin on your gums. Dr. Davis has emergency windows reserved today. Would you like me to book a relief visit for you right now?',
       actions: [
         { label: '🚨 Book Emergency Slot ($129)', type: 'book', val: 'Emergency' },
         { label: '📞 Call Reception Directly', type: 'call' },
@@ -1391,7 +1391,7 @@ let quickBook;
         title: '🦷 ROOT CANAL THERAPY (ENDODONTICS)',
         desc: 'Modern endodontic treatment relieves pain and saves your natural tooth.'
       },
-      reply: 'I know the words "root canal" can sound scary, but here is the truth: modern root canals do not cause pain—they relieve it!\n\nWhen the inner nerve of a tooth becomes inflamed or infected, a root canal clears out the bacteria and stops the throbbing immediately.\n\nDr. Marcus Davis uses electric rotary instruments and computer-guided local numbing. Most patients tell us it felt no different than a standard filling, and you can relax with Netflix or laughing gas throughout.',
+      reply: 'I know the words "root canal" can sound scary, but here is the truth: modern root canals do not cause pain, they relieve it!\n\nWhen the inner nerve of a tooth becomes inflamed or infected, a root canal clears out the bacteria and stops the throbbing immediately.\n\nDr. Marcus Davis uses electric rotary instruments and computer-guided local numbing. Most patients tell us it felt no different than a standard filling, and you can relax with Netflix or laughing gas throughout.',
       spoken: 'Modern root canals actually relieve pain rather than cause it! Dr. Davis makes sure you are completely numbed and comfortable, feeling no different than a routine filling.',
       actions: [
         { label: 'Book Root Canal Evaluation', type: 'book', val: 'Emergency' },
@@ -1414,7 +1414,7 @@ let quickBook;
         img: 'images/doctor-davis.webp',
         desc: 'Harvard-trained oral surgeon specializing in gentle wisdom extractions.'
       },
-      reply: 'Wisdom teeth pain—such as jaw stiffness, pressure behind your molars, or swelling—is very common. Dr. Marcus Davis, our Harvard-trained surgical specialist, handles wisdom tooth removals right here in our office.\n\nWe start with a quick low-dose 3D panoramic scan to evaluate your roots. During the procedure, we offer soothing nitrous oxide or oral conscious sedation so the experience is calm and stress-free.',
+      reply: 'Wisdom teeth pain, such as jaw stiffness, pressure behind your molars, or swelling, is very common. Dr. Marcus Davis, our Harvard-trained surgical specialist, handles wisdom tooth removals right here in our office.\n\nWe start with a quick low-dose 3D panoramic scan to evaluate your roots. During the procedure, we offer soothing nitrous oxide or oral conscious sedation so the experience is calm and stress-free.',
       spoken: 'Dr. Marcus Davis handles wisdom teeth right here in our office. We use 3D digital imaging and gentle sedation so the entire experience is smooth and comfortable.',
       actions: [
         { label: 'Book Wisdom Teeth Consult', type: 'book', val: 'Emergency' },
@@ -1561,7 +1561,7 @@ let quickBook;
       tokens: [
         ['gag'], ['gagging'], ['gag', 'reflex'], ['sensitive', 'throat'], ['choke'], ['swallow']
       ],
-      reply: 'A sensitive gag reflex is completely normal, and you are not alone! We treat patients with strong gag reflexes every single week with great success.\n\nHere is how we keep you comfortable:\n• We use fast digital 3D optical wands (iTero)—which means ZERO gooey, bulky putty impression trays in your mouth!\n• We offer gentle, pleasant-tasting topical throat sprays that temporarily calm the reflex.\n• We coach you through gentle nasal-breathing exercises.\n• And our "Hand-Raise Rule" is always active: the moment you need to swallow or take a breather, raise your hand and we pause instantly.',
+      reply: 'A sensitive gag reflex is completely normal, and you are not alone! We treat patients with strong gag reflexes every single week with great success.\n\nHere is how we keep you comfortable:\n• We use fast digital 3D optical wands (iTero), which means ZERO gooey, bulky putty impression trays in your mouth!\n• We offer gentle, pleasant-tasting topical throat sprays that temporarily calm the reflex.\n• We coach you through gentle nasal-breathing exercises.\n• And our "Hand-Raise Rule" is always active: the moment you need to swallow or take a breather, raise your hand and we pause instantly.',
       spoken: 'You will do great here! We use fast digital 3D optical scanners instead of gooey putty trays, gentle numbing sprays, and we pause whenever you need a breather.',
       actions: [
         { label: 'Book Anxiety-Free Cleaning ($99)', type: 'book', val: 'Cleaning' },
@@ -1609,7 +1609,7 @@ let quickBook;
         ['how', 'long', 'take'], ['how', 'long', 'appointment'], ['duration'],
         ['how', 'many', 'minutes'], ['how', 'long', 'visit'], ['how', 'long', 'cleaning']
       ],
-      reply: 'We respect your time and take pride in running strictly on schedule—no sitting in a crowded waiting room!\n\n• New Patient Exam & Cleaning: 60 relaxed minutes.\n• In-Office Laser Whitening: 60 minutes.\n• 3D Invisalign Scan or Implant Consultation: 30 minutes.\n• Emergency Pain Relief: 30 to 45 minutes to stabilize and relieve the ache.\n\nWould you like to reserve a morning, lunchtime, or evening time slot?',
+      reply: 'We respect your time and take pride in running strictly on schedule, no sitting in a crowded waiting room!\n\n• New Patient Exam & Cleaning: 60 relaxed minutes.\n• In-Office Laser Whitening: 60 minutes.\n• 3D Invisalign Scan or Implant Consultation: 30 minutes.\n• Emergency Pain Relief: 30 to 45 minutes to stabilize and relieve the ache.\n\nWould you like to reserve a morning, lunchtime, or evening time slot?',
       spoken: 'A comprehensive cleaning and exam takes a relaxed 60 minutes, and 3D consultations take 30 minutes. We run strictly on schedule so you never have to wait.',
       actions: [
         { label: 'Check Open Appointment Times', type: 'book' },

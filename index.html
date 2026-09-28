@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ropi Studio — Websites that load fast and book clients</title>
+<title>Ropi Studio: Websites that load fast and book clients</title>
 <meta name="description" content="Ropi Studio rebuilds local business websites: fast, mobile-first, with online booking that works at midnight. Flat fee, live in 4 days.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,7 +12,7 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ropistudio.com">
-<meta property="og:title" content="Ropi Studio — Websites that load fast and book clients">
+<meta property="og:title" content="Ropi Studio: Websites that load fast and book clients">
 <meta property="og:description" content="Fast, mobile-first websites with online booking that works at midnight. Flat fee, live in 4 days.">
 <meta property="og:image" content="https://ropistudio.com/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
@@ -319,7 +319,11 @@
   }
 
   .marquee .track {
-    display: inline-block;
+    /* Flex + max-content guarantees the two halves are pixel-identical, so the
+       -50% keyframe jump is seamless. (Inline-block + whitespace between spans
+       used to drift the loop point and leave a visible gap on wide screens.) */
+    display: flex;
+    width: max-content;
     animation: slide 30s linear infinite;
   }
 
@@ -329,7 +333,8 @@
     letter-spacing: 0.16em;
     text-transform: uppercase;
     color: var(--color-border-default);
-    margin: 0 24px;
+    padding: 0 24px;
+    flex-shrink: 0;
   }
 
   .marquee span b {
@@ -725,14 +730,22 @@
   /* ============ FOOTER ============ */
   footer {
     border-top: 1px solid var(--color-border-subtle);
-    padding: var(--space-5) 0 var(--space-5);
+    padding: var(--space-6) 0 var(--space-5);
     overflow: hidden;
+  }
+
+  .foot {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--space-5) var(--space-6);
   }
 
   .foot .giant {
     font-weight: 700;
-    font-size: clamp(3.5rem, 14vw, 11rem);
-    line-height: 0.9;
+    font-size: clamp(3.5rem, 11vw, 8.5rem);
+    line-height: 0.85;
     letter-spacing: -0.04em;
     text-transform: uppercase;
     color: transparent;
@@ -746,12 +759,28 @@
 
   .foot .meta {
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: var(--space-3);
-    margin-top: var(--space-4);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-left: auto;
+    text-align: left;
     color: var(--color-border-default);
     font-size: var(--font-size-sm);
+    padding-bottom: 10px;
+  }
+
+  .foot .meta a {
+    color: var(--color-text-primary);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-border-default);
+    padding-bottom: 2px;
+    transition: border-color var(--motion-duration-fast), color var(--motion-duration-fast);
+  }
+
+  .foot .meta a:hover {
+    color: var(--color-accent);
+    border-color: var(--color-accent);
   }
 
   /* ============ MOTION & REVEALS ============ */
@@ -866,6 +895,10 @@
     <div class="track">
       <span>Fast <b>·</b> mobile-first <b>·</b> online booking <b>·</b> AI receptionist <b>·</b> flat fee <b>·</b> live in 4 days <b>·</b></span>
       <span>Fast <b>·</b> mobile-first <b>·</b> online booking <b>·</b> AI receptionist <b>·</b> flat fee <b>·</b> live in 4 days <b>·</b></span>
+      <span>Fast <b>·</b> mobile-first <b>·</b> online booking <b>·</b> AI receptionist <b>·</b> flat fee <b>·</b> live in 4 days <b>·</b></span>
+      <span>Fast <b>·</b> mobile-first <b>·</b> online booking <b>·</b> AI receptionist <b>·</b> flat fee <b>·</b> live in 4 days <b>·</b></span>
+      <span>Fast <b>·</b> mobile-first <b>·</b> online booking <b>·</b> AI receptionist <b>·</b> flat fee <b>·</b> live in 4 days <b>·</b></span>
+      <span>Fast <b>·</b> mobile-first <b>·</b> online booking <b>·</b> AI receptionist <b>·</b> flat fee <b>·</b> live in 4 days <b>·</b></span>
     </div>
   </div>
 
@@ -904,7 +937,7 @@
         <article class="card reveal" style="--i:3">
           <span class="num">/04</span>
           <h3>Google cleanup</h3>
-          <p>Wrong hours, dead links, no photos, unanswered reviews — we fix what people see before they ever reach your website.</p>
+          <p>Wrong hours, dead links, no photos, unanswered reviews: we fix what people see before they ever reach your website.</p>
           <div class="price">$500 <small>flat</small></div>
         </article>
       </div>
@@ -926,7 +959,7 @@
             <li>Tap "Book Online"</li>
             <li>Pick any open day, pick a time</li>
             <li>Enter a name, hit confirm</li>
-            <li>Congratulations — that's a booked patient</li>
+            <li>Congratulations, that's a booked patient</li>
           </ol>
         </div>
       </div>
@@ -946,10 +979,10 @@
           </div>
         </div>
         <div class="row reveal" style="--i:1">
-          <div class="day">Day 1–2 · build</div>
+          <div class="day">Day 1 to 2 · build</div>
           <div>
             <h3>We build, you poke at it</h3>
-            <p>Site, booking, assistant — built and tested fast. You get a private link, click everything, request changes. Changes are included, never invoiced.</p>
+            <p>Site, booking, assistant: built and tested fast. You get a private link, click everything, request changes. Changes are included, never invoiced.</p>
           </div>
         </div>
         <div class="row reveal" style="--i:2">
@@ -1001,7 +1034,7 @@
     <div class="giant">Ropi<span style="color:var(--color-border-default);-webkit-text-stroke:0">.</span></div>
     <div class="meta">
       <div>© 2026 Ropi Studio · fast, booking-ready websites for local businesses</div>
-      <div><a href="https://ropistudio.com">ropistudio.com</a></div>
+      <a href="https://ropistudio.com">ropistudio.com</a>
     </div>
   </div>
 </footer>
